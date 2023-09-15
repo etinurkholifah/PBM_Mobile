@@ -1,59 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Panjang" />
+    tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/edt_length"
+        android:id="@+id/editTextAlas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lebar" />
+        android:hint="Masukkan panjang alas"
+        android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/edt_width"
+        android:id="@+id/editTextTinggi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tinggi" />
+        android:hint="Masukkan tinggi"
+        android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/edt_height"
+        android:id="@+id/editTextSisi1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:lines="1" />
+        android:hint="Masukkan panjang sisi 1"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextSisi2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan panjang sisi 2"
+        android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/btn_calculate"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hitung" />
+        android:text="Hitung"
+        android:onClick="hitungLuasDanKeliling" />
 
     <TextView
-        android:id="@+id/tv_result"
-        android:layout_width="match_parent"
+        android:id="@+id/textViewHasil"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Hasil"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="Hasil:" />
+
 </LinearLayout>

@@ -4,36 +4,37 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText edtWidth, edtHeight, edtLength;
-    private Button btnCalculate;
-    private TextView tvResult;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    private EditText editTextAlas, editTextTinggi, editTextSisi1, editTextSisi2;
+    private TextView textViewHasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        edtWidth = findViewById(R.id.edt_width);
-        edtHeight = findViewById(R.id.edt_height);
-        edtLength = findViewById(R.id.edt_length);
-        btnCalculate = findViewById(R.id.btn_calculate);
-        tvResult = findViewById(R.id.tv_result);
-        btnCalculate.setOnClickListener(this);
+
+        editTextAlas = findViewById(R.id.editTextAlas);
+        editTextTinggi = findViewById(R.id.editTextTinggi);
+        editTextSisi1 = findViewById(R.id.editTextSisi1);
+        editTextSisi2 = findViewById(R.id.editTextSisi2);
+        textViewHasil = findViewById(R.id.textViewHasil);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn_calculate) {
-            String inputLength = edtLength.getText().toString().trim();
-            String inputWidth = edtWidth.getText().toString().trim();
-            String inputHeight = edtHeight.getText().toString().trim();
-            Double volume = Double.parseDouble(inputLength) *
-                    Double.parseDouble(inputWidth) * Double.parseDouble(inputHeight);
-            tvResult.setText(String.valueOf(volume));
-        }
+    public void hitungLuasDanKeliling(View view) {
+        double alas = Double.parseDouble(editTextAlas.getText().toString());
+        double tinggi = Double.parseDouble(editTextTinggi.getText().toString());
+        double sisi1 = Double.parseDouble(editTextSisi1.getText().toString());
+        double sisi2 = Double.parseDouble(editTextSisi2.getText().toString());
+
+        double luas = alas * tinggi;
+        double keliling = 2 * (sisi1 + sisi2);
+
+        textViewHasil.setText("Luas: " + luas + "\nKeliling: " + keliling);
     }
 }
+
